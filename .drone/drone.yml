@@ -1,0 +1,65 @@
+---
+kind: pipeline
+type: docker
+name: build-aarch64
+
+platform:
+  arch: arm64
+  os: linux
+
+steps:
+  - name: build
+    image: plugins/docker
+    settings:
+      repo: andreipoe/buildpack-cpp
+      tags:
+        - 20.04-aarch64
+        - focal-aarch64
+        - latest-aarch64
+      username: andreipoe
+      password:
+        from_secret: docker_token
+
+---
+kind: pipeline
+type: docker
+name: build-amd64
+
+platform:
+  arch: amd64
+  os: linux
+
+steps:
+  - name: build
+    image: plugins/docker
+    settings:
+      repo: andreipoe/buildpack-cpp
+      tags:
+        - 20.04-amd64
+        - focal-amd64
+        - latest-amd64
+      username: andreipoe
+      password:
+        from_secret: docker_token
+
+---
+kind: pipeline
+type: docker
+name: multiarch-manifest
+
+steps:
+  - name: manifest
+    image: plugins/manifest
+    settings:
+      target: andreipoe/buildpack-cpp
+      spec: .drone/manifest-spec.yml
+      username: andreipoe
+      password:
+        from_secret: docker_token
+
+depends_on: [build-aarch64, build-amd64]
+---
+kind: signature
+hmac: 61499ff46c86e95b80ec753c666e24c9c3c04e04b0c6d2381ce0e96ad9af783f
+
+...
