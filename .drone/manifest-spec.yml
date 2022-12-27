@@ -1,12 +1,12 @@
 image: andreipoe/buildpack-cpp:focal
-tags: [20.04, latest]
+tags: [22.04, latest]
 
 manifests:
-  - image: andreipoe/buildpack-cpp:20.04-aarch64
+  - image: andreipoe/buildpack-cpp:22.04-aarch64
     platform:
       architecture: arm64
       os: linux
-  - image: andreipoe/buildpack-cpp:20.04-amd64
+  - image: andreipoe/buildpack-cpp:22.04-amd64
     platform:
       architecture: amd64
       os: linux

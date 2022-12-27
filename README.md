@@ -9,4 +9,4 @@ It comes with the latest version of GCC and Clang, and it has common C++ build t
 
 The following versions are supported:
 
-* [`focal` (`20.04`, `latest`)](https://github.com/andreipoe/buildpack-cpp/blob/master/Dockerfile)
+* [`jammy` (`22.04`, `latest`)](https://github.com/andreipoe/buildpack-cpp/blob/master/Dockerfile)

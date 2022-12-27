@@ -1,4 +1,4 @@
-FROM ubuntu:focal
+FROM ubuntu:22.04
 LABEL maintainer "Andrei Poenaru <docker@simd.stream>"
 
 ARG DEBIAN_FRONTEND=noninteractive

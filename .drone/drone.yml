@@ -13,8 +13,8 @@ steps:
     settings:
       repo: andreipoe/buildpack-cpp
       tags:
-        - 20.04-aarch64
-        - focal-aarch64
+        - 22.04-aarch64
+        - jammy-aarch64
         - latest-aarch64
       username: andreipoe
       password:
@@ -35,8 +35,8 @@ steps:
     settings:
       repo: andreipoe/buildpack-cpp
       tags:
-        - 20.04-amd64
-        - focal-amd64
+        - 22.04-amd64
+        - jammy-amd64
         - latest-amd64
       username: andreipoe
       password:
@@ -76,6 +76,6 @@ steps:
 depends_on: [build-aarch64, build-amd64]
 ---
 kind: signature
-hmac: 34e7cd89b41667054a4890ac988be60d580dfb2ca05ffc1587615828bd0fb934
+hmac: 355c1e31bf489f1aab6ab8828ceca2d9dcb0ab146dcb2c5824c15350c0e10a61
 
 ...
