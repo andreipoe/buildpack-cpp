@@ -51,7 +51,6 @@ steps:
   - name: manifest
     image: plugins/manifest
     settings:
-      target: andreipoe/buildpack-cpp
       spec: .drone/manifest-spec.yml
       username: andreipoe
       password:
@@ -76,6 +75,6 @@ steps:
 depends_on: [build-aarch64, build-amd64]
 ---
 kind: signature
-hmac: 355c1e31bf489f1aab6ab8828ceca2d9dcb0ab146dcb2c5824c15350c0e10a61
+hmac: e64eba4b46b7c71d21d1f801c33bc724324eaf83f3335b41ad2fd8bf879c9b98
 
 ...
